@@ -27,6 +27,37 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+<!-- CONTADOR DE CLIQUES Experimentos-->
+    <script>
+        function clickCounterExp1() {
+            if (typeof(Storage) !== "undefined") {
+                if (localStorage.clickcountexp1) {
+                    localStorage.clickcountexp1 = Number(localStorage.clickcountexp1)+1;
+                } else {
+                    localStorage.clickcountexp1 = 1;
+                }
+                document.getElementById("resultexp1").innerHTML = "Número de Downloads: " + localStorage.clickcountexp1;
+            } else {
+                document.getElementById("resultexp1").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+    </script>
+
+    <!-- CONTADOR DE CLIQUES 2-->
+    <script>
+        function clickCounterExp2() {
+            if (typeof(Storage) !== "undefined") {
+                if (localStorage.clickcountexp2) {
+                    localStorage.clickcountexp2 = Number(localStorage.clickcountexp2)+1;
+                } else {
+                    localStorage.clickcountexp2 = 1;
+                }
+                document.getElementById("resultexp2").innerHTML = "Número de Downloads: " + localStorage.clickcountexp2;
+            } else {
+                document.getElementById("resultexp2").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+    </script>
 
 </head>
 
@@ -127,8 +158,9 @@
                     <div class="process-block">
                         <img src="images/experimentos/exp1.jpg" alt="" class="img-fluid">
                         <h3>Cartilha de Experimentos 1</h3>
-                        <a href="https://drive.google.com/file/d/1Koxzn_ilsKjSeTaUEtAlkSI3yMrEwo1r/view?usp=sharing">
-                        <p>Download</p></a>
+                        <a href="https://drive.google.com/file/d/1Koxzn_ilsKjSeTaUEtAlkSI3yMrEwo1r/view?usp=sharing" target="_blank">
+                            <p><button onclick="clickCounterExp1()" type="button">Download</button></p></a>
+                            <div id="resultexp1"></div>
 
 
                     </div>
@@ -137,9 +169,10 @@
                     <div class="process-block">
                         <img src="images/experimentos/exp2.jpg" alt="" class="img-fluid">
                         <h3>Cartilha de Experimentos 2</h3>
-                        <a href="https://drive.google.com/file/d/1oVB-wZrwTMTRZCtnTCodY88W4TIboRbU/view?usp=sharing">
+                        <a href="https://drive.google.com/file/d/1oVB-wZrwTMTRZCtnTCodY88W4TIboRbU/view?usp=sharing" target="_blank">
+                            <p><button onclick="clickCounterExp2()" type="button">Download</button></p></a>
+                            <div id="resultexp2"></div>
 
-                            <p>Download</p></a>
 
                     </div>
                 </div>

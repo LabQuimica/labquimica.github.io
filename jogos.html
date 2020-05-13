@@ -28,6 +28,22 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
+    <!-- CONTADOR DE CLIQUES Jogos-->
+    <script>
+        function clickCounterJogo1() {
+            if (typeof(Storage) !== "undefined") {
+                if (localStorage.clickcountjogo1) {
+                    localStorage.clickcountjogo1 = Number(localStorage.clickcountjogo1)+1;
+                } else {
+                    localStorage.clickcountjogo1 = 1;
+                }
+                document.getElementById("resultjogo1").innerHTML = "Número de Downloads: " + localStorage.clickcountjogo1;
+            } else {
+                document.getElementById("resultjogo1").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+    </script>
+
 </head>
 
 
@@ -127,10 +143,11 @@
                         <!--aqui vai a imagem do jogo-->
                         <img src="images/jogos/jogos.jpg" alt="" class="img-fluid">
                         <!--aqui vai o titulo do jogo-->
-                        <h3>Bingo Periógico</h3>
+                        <h3>Bingo Periódico</h3>
                         <!--aqui vai a URL do jogo-->
-                        <a href="https://drive.google.com/file/d/19GHkGfWP6eZ4_9rdZVIyOWdXtPH_0I_9/view?usp=sharing">
-                        <p>Download</p></a>
+                        <a href="https://drive.google.com/file/d/19GHkGfWP6eZ4_9rdZVIyOWdXtPH_0I_9/view?usp=sharing" target="_blank">
+                            <p><button onclick="clickCounterJogo1()" type="button">Download</button></p></a>
+                        <div id="resultjogo1"></div>
                     </div>
                 </div>
 
